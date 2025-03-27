@@ -1,7 +1,7 @@
 from core.grader_factory import DataMatrixGraderFactory
 from core.graders.modulation_grader import ModulationGrader
 from core.graders.symbol_grader import SymbolContrastGrader
-from datamatrixqa.reader.nn_decoder import DataMatrixNNDecoder
+from reader.nn_decoder import DataMatrixNNDecoder
 
 class DataMatrixGradeAPI:
     def __init__(self):

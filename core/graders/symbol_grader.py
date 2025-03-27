@@ -1,4 +1,3 @@
-
 from core.grader_interface import DataMatrixGraderInterface
 
 class SymbolContrastGrader(DataMatrixGraderInterface):

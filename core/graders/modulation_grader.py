@@ -1,4 +1,4 @@
-from datamatrixqa.core.grader_interface import DataMatrixGraderInterface
+from core.grader_interface import DataMatrixGraderInterface
 
 class ModulationGrader(DataMatrixGraderInterface):
     def __init__(self):

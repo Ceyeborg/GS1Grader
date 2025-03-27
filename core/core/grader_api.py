@@ -44,8 +44,6 @@ class DataMatrixGradeAPI:
         decoder = DataMatrixNNDecoder(
             sampling_rate=10,
             onnx_model=None,
-            output_path=None,
-            save_plots=False,
         )
         decoded_dmtx_img, nn_used, input_image = decoder.decode_image(
             image_path
