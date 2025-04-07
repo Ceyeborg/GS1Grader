@@ -2,7 +2,7 @@ Reader
 ======
 
 Data Matrix Reader
----------------
+------------------
 
 .. automodule:: core.reader.data_matrix_reader
    :members:
@@ -10,7 +10,7 @@ Data Matrix Reader
    :show-inheritance:
 
 Data Matrix Decoder
-----------------
+-------------------
 
 .. automodule:: core.reader.data_matrix_decoder
    :members:

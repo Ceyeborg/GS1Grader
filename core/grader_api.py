@@ -23,18 +23,17 @@ Example:
     ```
 
 See Also:
-    - DataMatrixGraderFactory: Factory class for creating graders
-    - ModulationGrader: Grader for modulation quality
-    - SymbolContrastGrader: Grader for symbol contrast
+    - `DataMatrixGraderFactory`: Factory class for creating graders
+    - `ModulationGrader`: Grader for modulation quality
+    - `SymbolContrastGrader`: Grader for symbol contrast
 """
-
-from reader.data_matrix_decoder import DataMatrixQADecoder
-from reader.data_matrix_reader import DataMatrixQAReader
 
 from core.common import DecodedDmtxData
 from core.grader_factory import DataMatrixGraderFactory
 from core.graders.modulation_grader import ModulationGrader
 from core.graders.symbol_contrast_grader import SymbolContrastGrader
+from core.reader.data_matrix_decoder import DataMatrixQADecoder
+from core.reader.data_matrix_reader import DataMatrixQAReader
 
 
 class DataMatrixGradeAPI:
@@ -76,7 +75,7 @@ class DataMatrixGradeAPI:
         dmtx_img = self.dmtx_reader.read(filename=image_path)
 
         decoded_dmtx_image = self.dmtx_decoder.decode(
-            image=dmtx_img, sampling_rate=10
+            image=dmtx_img, sampling_rate=sampling_rate
         )
 
         if decoded_dmtx_image is None or len(decoded_dmtx_image) == 0:
@@ -117,7 +116,7 @@ class DataMatrixGradeAPI:
     def grade_datamatrix(
         self, image_path: str, grade_type: str, explain: bool = False
     ):
-        """Grade a data matrix image.
+        """Grade a Data Matrix code image using the specified grading method.
 
         This function decodes the provided data matrix image and applies
         the specified grading method to evaluate its quality.

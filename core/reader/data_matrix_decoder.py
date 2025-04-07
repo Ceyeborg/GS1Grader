@@ -7,7 +7,7 @@ class DataMatrixQADecoder:
     def __init__(self) -> None:
         pass
 
-    def decode(self, image, sampling_rate=10) -> list(type[Decoded]):
+    def decode(self, image, sampling_rate=10) -> list[Decoded]:
         """Decodes 2d barcode image
 
         :param image: image in PNG, JPEG formats

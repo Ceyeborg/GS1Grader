@@ -4,12 +4,12 @@
    contain the root `toctree` directive.
 
 Welcome to GS1Grader's documentation!
-===================================
+=====================================
 
 GS1Grader is a Python library for grading Data Matrix codes using various quality metrics including modulation and symbol contrast.
 
 Installation
------------
+------------
 
 You can install GS1Grader using pip:
 
@@ -18,7 +18,7 @@ You can install GS1Grader using pip:
    pip install gs1grader
 
 System Dependencies
------------------
+-------------------
 
 Before installing, ensure you have the following system dependencies:
 
@@ -31,7 +31,7 @@ Before installing, ensure you have the following system dependencies:
        libxext6
 
 Quick Start
-----------
+-----------
 
 Here's a simple example:
 
@@ -60,6 +60,5 @@ Here's a simple example:
    api/grader_api
    api/graders
    api/reader
-   api/common
    usage/installation
    usage/examples
