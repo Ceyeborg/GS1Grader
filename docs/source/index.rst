@@ -44,7 +44,7 @@ Here's a simple example:
 
    # Grade an image using the modulation grader
    grade, explanation = grader_api.grade_datamatrix(
-       image_path="path/to/your/datamatrix.jpg",
+       image_path="path/to/your/datamatrix.png",
        grade_type="modulation",
        explain=True
    )

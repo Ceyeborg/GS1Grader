@@ -12,6 +12,13 @@ class UECGrader(DataMatrixGraderInterface):
     The UEC grade is determined by the percentage of error correction capacity
     that remains unused in the Data Matrix code. A higher percentage results
     in a better grade, indicating more resilience against errors.
+
+    The UEC grade is determined by the following thresholds:
+    - Grade A: Greater than or equal to 62% unused error correction
+    - Grade B: 50% to 61% unused error correction
+    - Grade C: 37% to 49% unused error correction
+    - Grade D: 25% to 36% unused error correction
+    - Grade F: Less than 25% unused error correction
     """
 
     def compute_grade(self, decoded_data):

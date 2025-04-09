@@ -8,20 +8,6 @@ The module implements a factory pattern to create appropriate graders based
 on the requested grade type, allowing for extensibility and separation of
 concerns between the API interface and the grading implementations.
 
-Example:
-    ```python
-    # Create a grading API instance
-    grader_api = DataMatrixGradeAPI()
-
-    # Grade an image using the modulation grader
-    grade_result = grader_api.grade_datamatrix(
-                                    "path/to/image.jpg",
-                                    "modulation")
-
-    # Print the grade
-    print(f"Modulation grade: {grade_result.grade}")
-    ```
-
 See Also:
     - `DataMatrixGraderFactory`: Factory class for creating graders
     - `ModulationGrader`: Grader for modulation quality
@@ -64,13 +50,12 @@ class DataMatrixGradeAPI:
     def _decode_image(
         self, image_path: str, sampling_rate: int = 10
     ) -> DecodedDmtxData:
-        """Decode the image using the neural network decoder
+        """Decode the image using the neural network decoder.
 
-        Args:
-            image_path (str): Path to the image to decode
-
-        Returns:
-            DecodedDmtxData: Decoded DataMatrix image data
+        :param image_path: Path to the image to decode
+        :param sampling_rate: Sampling rate for decoding, defaults to 10
+        :return: Decoded DataMatrix image data
+        :rtype: DecodedDmtxData
         """
         dmtx_img = self.dmtx_reader.read(filename=image_path)
 
@@ -124,7 +109,6 @@ class DataMatrixGradeAPI:
         :param image_path: Path to the data matrix image file
         :type image_path: str
         :param grade_type: Type of grading to perform
-        (e.g., "modulation", "symbol_contrast")
         :type grade_type: str
         :param explain: Whether to provide detailed explanation of the grade
         :type explain: bool, optional
