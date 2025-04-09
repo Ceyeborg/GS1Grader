@@ -109,6 +109,7 @@ class DataMatrixGradeAPI:
         :param image_path: Path to the data matrix image file
         :type image_path: str
         :param grade_type: Type of grading to perform
+                            (e.g. modulation, symbol contrast)
         :type grade_type: str
         :param explain: Whether to provide detailed explanation of the grade
         :type explain: bool, optional

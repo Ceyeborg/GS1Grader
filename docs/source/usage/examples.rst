@@ -1,11 +1,11 @@
 Usage Examples
-============
+==============
 
 Basic Usage
----------
+-----------
 
 Simple Grading Example
-~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 Here's a basic example of grading a Data Matrix code:
 
@@ -27,10 +27,10 @@ Here's a basic example of grading a Data Matrix code:
     print(f"Explanation: {explanation}")
 
 Advanced Usage
-------------
+--------------
 
 Multiple Grading Methods
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Example of using different grading methods:
 

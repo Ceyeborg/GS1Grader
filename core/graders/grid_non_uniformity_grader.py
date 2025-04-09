@@ -26,7 +26,7 @@ class GridNonUniformityGrader(DataMatrixGraderInterface):
         matrix parameters.
 
         :param decoded_data: The decoded DataMatrix data containing
-        grid information
+                            grid information
         :type decoded_data: DecodedDmtxData
         :returns: The grade of the grid non-uniformity (A, B, C, D, or F)
         :rtype: str

@@ -1,11 +1,11 @@
 Installation Guide
-================
+==================
 
 Prerequisites
-------------
+-------------
 
 System Dependencies
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 Before installing GS1Grader, ensure you have the following system dependencies installed:
 
@@ -23,15 +23,15 @@ For Ubuntu/Debian:
 For other Linux distributions, install the equivalent packages using your distribution's package manager.
 
 Python Requirements
-~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 GS1Grader requires Python 3.6 or later.
 
 Installation Methods
-------------------
+--------------------
 
 Using pip
-~~~~~~~~
+~~~~~~~~~
 
 The simplest way to install GS1Grader is using pip:
 
@@ -40,7 +40,7 @@ The simplest way to install GS1Grader is using pip:
     pip install gs1grader
 
 From Source
-~~~~~~~~~~
+~~~~~~~~~~~
 
 To install from source:
 
@@ -52,7 +52,7 @@ To install from source:
 
 
 Verifying Installation
--------------------
+----------------------
 
 To verify your installation:
 

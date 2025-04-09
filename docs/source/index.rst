@@ -6,7 +6,7 @@
 Welcome to GS1Grader's documentation!
 =====================================
 
-GS1Grader is a Python library for grading Data Matrix codes using various quality metrics including modulation and symbol contrast.
+GS1Grader is a Python library for grading Data Matrix codes using GS1 quality metrics with modulation and symbol contrast implementation.
 
 Installation
 ------------
