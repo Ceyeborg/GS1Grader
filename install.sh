@@ -52,6 +52,6 @@ fi
 
 # Install Python package
 echo "Installing GS1Grader Python package..."
-pip install -e .
+pip setup.py develop
 
 echo "Installation complete!"

@@ -61,11 +61,11 @@ The easiest way to install GS1Grader is using the provided installation script. 
 Using pip
 ~~~~~~~~~
 
-Alternatively, you can install GS1Grader using pip:
+Alternatively, you can install GS1Grader sdist using pip:
 
 .. code-block:: bash
 
-    pip install gs1grader
+    pip install gs1grader-x.x.x.tar.gz
 
 
 Verifying Installation
