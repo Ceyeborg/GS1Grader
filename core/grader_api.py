@@ -16,8 +16,12 @@ See Also:
 
 from core.common import DecodedDmtxData
 from core.grader_factory import DataMatrixGraderFactory
+from core.graders.axial_non_uniformity_grader import AxialNonUniformityGrader
+from core.graders.fixed_pattern_damage_grader import FixedPatternDamageGrader
+from core.graders.grid_non_uniformity_grader import GridNonUniformityGrader
 from core.graders.modulation_grader import ModulationGrader
 from core.graders.symbol_contrast_grader import SymbolContrastGrader
+from core.graders.uec_grader import UECGrader
 from core.reader.data_matrix_decoder import DataMatrixQADecoder
 from core.reader.data_matrix_reader import DataMatrixQAReader
 
@@ -46,6 +50,16 @@ class DataMatrixGradeAPI:
         """Register all available graders with the factory."""
         self.factory.register_grader("modulation", ModulationGrader)
         self.factory.register_grader("symbol_contrast", SymbolContrastGrader)
+        self.factory.register_grader(
+            "axial_non_uniformity", AxialNonUniformityGrader
+        )
+        self.factory.register_grader(
+            "grid_non_uniformity", GridNonUniformityGrader
+        )
+        self.factory.register_grader(
+            "fixed_pattern_damage", FixedPatternDamageGrader
+        )
+        self.factory.register_grader("uec", UECGrader)
 
     def _decode_image(
         self, image_path: str, sampling_rate: int = 10
@@ -99,7 +113,7 @@ class DataMatrixGradeAPI:
         )
 
     def grade_datamatrix(
-        self, image_path: str, grade_type: str, explain: bool = False
+        self, image_path: str, grade_type: str, explanation_path: str = ""
     ):
         """Grade a Data Matrix code image using the specified grading method.
 
@@ -111,8 +125,9 @@ class DataMatrixGradeAPI:
         :param grade_type: Type of grading to perform
                             (e.g. modulation, symbol contrast)
         :type grade_type: str
-        :param explain: Whether to provide detailed explanation of the grade
-        :type explain: bool, optional
+        :param explanation_path: Provide a path to save png of the detailed
+                            explanation of the grade
+        :type explanation_path: str, optional
         :returns: A tuple containing the grade and explanation (if requested)
         :rtype: tuple
 
@@ -125,8 +140,10 @@ class DataMatrixGradeAPI:
         decoded_data = self._decode_image(image_path)
 
         grade = grader.compute_grade(decoded_data)
-        if explain:
-            explain_grade = grader.explain_grade(decoded_data)
+        if bool(explanation_path):
+            explain_grade = grader.explain_grade(
+                decoded_data, explanation_path=explanation_path
+            )
         else:
             explain_grade = None
 

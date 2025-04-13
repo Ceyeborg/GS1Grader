@@ -10,36 +10,46 @@ from setuptools.command.install import install
 
 def patch_pylibdmtx():
     """Patch pylibdmtx with our custom files."""
-    # Get the site-packages directory
-    if hasattr(sys, "real_prefix") or (
-        hasattr(sys, "base_prefix") and sys.base_prefix != sys.prefix
-    ):
-        # We're in a virtual environment
-        site_packages = os.path.join(
-            sys.prefix,
-            "lib",
-            f"python{sys.version_info.major}.{sys.version_info.minor}",
-            "site-packages",
+    try:
+        # Get the site-packages directory
+        if hasattr(sys, "real_prefix") or (
+            hasattr(sys, "base_prefix") and sys.base_prefix != sys.prefix
+        ):
+            # We're in a virtual environment
+            site_packages = os.path.join(
+                sys.prefix,
+                "lib",
+                f"python{sys.version_info.major}.{sys.version_info.minor}",
+                "site-packages",
+            )
+        else:
+            # We're in the system Python
+            site_packages = site.getsitepackages()[0]
+
+        # Path to the installed pylibdmtx package
+        pylibdmtx_path = os.path.join(site_packages, "pylibdmtx")
+        print(f"Patching pylibdmtx at: {pylibdmtx_path}", flush=True)
+
+        # Path to our patched files
+        patched_dir = os.path.join(
+            os.path.dirname(__file__), "core", "patched"
         )
-    else:
-        # We're in the system Python
-        site_packages = site.getsitepackages()[0]
+        print(f"Using patched files from: {patched_dir}", flush=True)
 
-    # Path to the installed pylibdmtx package
-    pylibdmtx_path = os.path.join(site_packages, "pylibdmtx")
+        # Copy our patched files
+        files_to_patch = ["pylibdmtx.py", "wrapper.py", "dmtx_library.py"]
+        for file in files_to_patch:
+            src = os.path.join(patched_dir, file)
+            dst = os.path.join(pylibdmtx_path, file)
+            print(f"Patching {file}...")
+            shutil.copy2(src, dst)
+            print(f" Successfully patched {file}", flush=True)
 
-    # Path to our patched files
-    patched_dir = os.path.join(os.path.dirname(__file__), "core", "patched")
-
-    # Copy our patched files
-    shutil.copy2(
-        os.path.join(patched_dir, "pylibdmtx.py"),
-        os.path.join(pylibdmtx_path, "pylibdmtx.py"),
-    )
-    shutil.copy2(
-        os.path.join(patched_dir, "wrapper.py"),
-        os.path.join(pylibdmtx_path, "wrapper.py"),
-    )
+        print("Patching completed successfully!", flush=True)
+        return True
+    except Exception as e:
+        print(f"Error during patching: {repr(e)}")
+        return False
 
 
 class CustomInstall(install):

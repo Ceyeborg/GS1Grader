@@ -10,21 +10,20 @@ class DataMatrixGraderFactory:
     graders and provides methods to register new graders and retrieve
     instances of registered graders.
 
-    Example:
-        ```python
-        # Create a factory
-        factory = DataMatrixGraderFactory()
+    :param _graders: Dictionary mapping grader names to grader classes.
+    :type _graders: dict
 
-        # Register graders
-        factory.register_grader("modulation", ModulationGrader)
-        factory.register_grader("symbol_contrast", SymbolContrastGrader)
+    :example:
 
-        # Get a grader instance
-        modulation_grader = factory.get_grader("modulation")
-        ```
-
-    Attributes:
-        _graders (dict): Dictionary mapping grader names to grader classes.
+    >>> # Create a factory
+    >>> factory = DataMatrixGraderFactory()
+    >>>
+    >>> # Register graders
+    >>> factory.register_grader("modulation", ModulationGrader)
+    >>> factory.register_grader("symbol_contrast", SymbolContrastGrader)
+    >>>
+    >>> # Get a grader instance
+    >>> modulation_grader = factory.get_grader("modulation")
     """
 
     def __init__(self):

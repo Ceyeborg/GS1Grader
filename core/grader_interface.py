@@ -32,6 +32,6 @@ class DataMatrixGraderInterface(ABC):
         pass
 
     @abstractmethod
-    def explain_grade(self, data):
+    def explain_grade(self, decoded_data, explanation_path):
         """Explain the grade for the given data matrix parameters"""
         pass

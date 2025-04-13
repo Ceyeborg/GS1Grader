@@ -2,7 +2,8 @@ from core.grader_api import DataMatrixGradeAPI
 
 # Simple usage
 grader_api = DataMatrixGradeAPI()
-(grade, explain) = grader_api.grade_datamatrix(
-    "./examples/images/datamatrix_2d_8.png", "modulation"
-)
-print(f"Grade: {grade}, Explanation: {explain}")
+for grade in ["modulation", "symbol_contrast"]:
+    (grade, explain) = grader_api.grade_datamatrix(
+        "./examples/images/datamatrix_2d_original.png", grade, "."
+    )
+    print(f"Grade: {grade}, Explanation is under: {explain}")

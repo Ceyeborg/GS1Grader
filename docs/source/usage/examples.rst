@@ -40,14 +40,14 @@ Example of using different grading methods:
 
     # Grade modulation
     mod_grade, mod_explain = grader.grade_datamatrix(
-        image_path="image.jpg",
+        image_path="path/to/image.png",
         grade_type="modulation",
         explain=True
     )
 
     # Grade symbol contrast
     contrast_grade, contrast_explain = grader.grade_datamatrix(
-        image_path="image.jpg",
+        image_path="path/to/image.png",
         grade_type="symbol_contrast",
         explain=True
     )

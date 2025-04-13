@@ -47,10 +47,12 @@ class SymbolContrastGrader(DataMatrixGraderInterface):
         modulation_attr = get_modulation_attributes(decoded_data)
 
         for symbol_contrast_range, grade in self.grade_thresholds.items():
-            if modulation_attr.symbol_contrast in symbol_contrast_range:
+            if int(modulation_attr.symbol_contrast) in symbol_contrast_range:
                 return grade
 
         return "F"
 
-    def explain_grade(self, data):
-        return super().explain_grade(data)
+    def explain_grade(
+        self, decoded_data: DecodedDmtxData, explanation_path: str
+    ):
+        print("No explanation for symbol contrast")

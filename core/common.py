@@ -51,7 +51,7 @@ class ModulationAttributes:
 
     module_x_y: Dict[tuple, list]
     module_average: Dict[tuple, float]
-    symbol_contrast: int
+    symbol_contrast: float
     global_threshold: float
 
 
@@ -103,7 +103,7 @@ def convert_to_module_x_y(
 
 def compute_module_intensity(
     module_x_y: Dict[tuple, list], size_x: int, size_y: int
-) -> (int, int, float, Dict[tuple, float]):
+) -> (float, float, float, Dict[tuple, float]):
     """Compute module intensity of the entire matrix
 
     This function calculates the average intensity for each module
@@ -198,3 +198,34 @@ def get_modulation_attributes(
         symbol_contrast=symbol_contrast,
         global_threshold=global_threshold,
     )
+
+
+def map_raw_fit_x_y(decoded_data: DecodedDmtxData) -> Dict[tuple, tuple]:
+    """Map the raw x, y coordinates to the fit x, y coordinates.
+
+    This function creates a mapping between the fitted coordinates
+    (processed/corrected) and the raw coordinates (original) from the
+    decoded DataMatrix data.
+
+    :param decoded_data: Decoded DataMatrix data containing raw
+                        and fit coordinates
+    :type decoded_data: DecodedDmtxData
+    :return: Dictionary mapping fitted coordinates to raw coordinates
+    :rtype: Dict[tuple, tuple]
+    """
+    map_raw_fit_x_y = {}
+    assert (
+        len(decoded_data.raw_x)
+        == len(decoded_data.raw_y)
+        == len(decoded_data.fit_x)
+        == len(decoded_data.fit_y)
+    ), "length of raw_x, raw_y, fit_x, fit_y must be the same"
+    for i in range(len(decoded_data.raw_x)):
+        map_raw_fit_x_y[
+            (round(decoded_data.fit_x[i], 1), round(decoded_data.fit_y[i], 1))
+        ] = (
+            decoded_data.raw_x[i],
+            decoded_data.raw_y[i],
+        )
+
+    return map_raw_fit_x_y
