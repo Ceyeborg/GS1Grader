@@ -1,5 +1,7 @@
 # GS1Grader
 
+![Banner](GitHub%20Header-UDI.jpg)
+
 GS1Grader is a Python library for grading Data Matrix codes using GS1 quality metrics with modulation and symbol contrast implementation.
 
 ## Prerequisites
@@ -17,14 +19,17 @@ sudo apt-get install -y \
     libxext6
 ```
 
-These system dependencies are required for proper functioning of OpenCV and pylibdmtx.
+### Mac OS
+```bash
+# Install Homebrew if not already installed
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-### Other Linux Distributions
-Please install the equivalent packages using your distribution's package manager:
-- libdmtx
-- ffmpeg
-- libsm6
-- libxext6
+# Install required dependencies
+brew install libdmtx
+brew install ffmpeg
+```
+
+These system dependencies are required for proper functioning of OpenCV and pylibdmtx.
 
 ## Installation
 
@@ -85,4 +90,7 @@ Methods:
 
 ## License
 
-[Add your license information here]
+This project is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0) - see the [LICENSE](LICENSE) file for details.
+
+The AGPL-3.0 is a copyleft license that requires anyone who distributes your code or a derivative work to make the source available under the same terms, and also requires you to provide the source code to users who interact with your software as a service.
+

@@ -81,7 +81,11 @@ setup(
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/Ceyeborg/GS1Grader",
-    classifiers=[],  # Update with your actual license
+    classifiers=[
+        "Programming Language :: Python :: 3",
+        "License :: OSI Approved :: AGPL-3.0",
+        "Operating System :: OS Independent", 
+    ],
     python_requires=">=3.6",
     cmdclass={
         "install": CustomInstall,

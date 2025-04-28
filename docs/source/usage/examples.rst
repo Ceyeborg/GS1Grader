@@ -1,6 +1,18 @@
 Usage Examples
 ==============
 
+This section provides examples of how to use the GS1 Grader package. We recommend starting with the interactive Jupyter notebook example below, which provides a hands-on introduction to the package's features.
+
+Interactive Examples
+--------------------
+
+The following Jupyter notebook provides interactive examples with real outputs and visualizations:
+
+.. toctree::
+   :maxdepth: 2
+
+   notebooks/examples
+
 Basic Usage
 -----------
 
@@ -20,11 +32,11 @@ Here's a basic example of grading a Data Matrix code:
     grade, explanation = grader.grade_datamatrix(
         image_path="path/to/image.png",
         grade_type="modulation",
-        explain=True
+        exaplanation_path="path/to/explanation_img"
     )
 
     print(f"Grade: {grade}")
-    print(f"Explanation: {explanation}")
+    print(f"Explanation is under: {explanation}")
 
 Advanced Usage
 --------------
@@ -36,21 +48,16 @@ Example of using different grading methods:
 
 .. code-block:: python
 
+    from core.grader_api import DataMatrixGradeAPI
+
     grader = DataMatrixGradeAPI()
+    grade_types=["modulation", "symbol_contrast"]
 
-    # Grade modulation
-    mod_grade, mod_explain = grader.grade_datamatrix(
-        image_path="path/to/image.png",
-        grade_type="modulation",
-        explain=True
-    )
-
-    # Grade symbol contrast
-    contrast_grade, contrast_explain = grader.grade_datamatrix(
-        image_path="path/to/image.png",
-        grade_type="symbol_contrast",
-        explain=True
-    )
-
-    print(f"Modulation Grade: {mod_grade}")
-    print(f"Symbol Contrast Grade: {contrast_grade}")
+    for grade_type in grade_types:
+        grade, exaplanation = grader.grade_datamatrix(
+            image_path="path/to/image.png",
+            grade_type=grade_type,
+            exaplanation_path="path/to/expalantion_img"
+        )
+        print(f"For {grade_type} -> Grade: {grade}")
+        print(f"For {grade_type} -> Explanation is under: {exaplanation}")

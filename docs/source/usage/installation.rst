@@ -9,27 +9,29 @@ System Dependencies
 
 Before installing GS1Grader, ensure you have the following system dependencies installed:
 
-For Ubuntu/Debian:
+.. tabs::
 
-.. code-block:: bash
+    .. tab:: Ubuntu/Debian:
 
-    sudo apt-get update
-    sudo apt-get install -y \
-        libdmtx0b \
-        ffmpeg \
-        libsm6 \
-        libxext6
+        .. code-block:: bash
 
-For Mac OS:
+            sudo apt-get update
+            sudo apt-get install -y \
+                libdmtx0b \
+                ffmpeg \
+                libsm6 \
+                libxext6
 
-.. code-block:: bash
+    .. tab:: Mac OS:
 
-    # Install Homebrew if not already installed
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+        .. code-block:: bash
+        
+            # Install Homebrew if not already installed
+            /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-    # Install required dependencies
-    brew install libdmtx
-    brew install ffmpeg
+            # Install required dependencies
+            brew install libdmtx
+            brew install ffmpeg
 
 For other Linux distributions, install the equivalent packages using your distribution's package manager.
 

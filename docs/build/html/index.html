@@ -5,42 +5,59 @@
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="Grader API" href="api/grader_api.html" />
 
-    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+    <!-- Generated with Sphinx 8.1.3 and Furo 2024.08.06 -->
         <title>GS1Grader 0.1.0 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
-
-
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=0c30a438" />
+    
+    
 
 
 <style>
   body {
     --color-code-background: #f8f8f8;
   --color-code-foreground: black;
-
+  --color-brand-primary: #E40EAB;
+  --color-brand-content: #E40EAB;
+  --color-toc-foreground--hover: #E40EAB;
+  --color-toc-foreground--active: #E40EAB;
+  --color-announcement-background: #E40EAB;
+  --color-link: #E40EAB;
+  --color-link-underline: #E40EAB;
+  --color-admonition-border--note: #E40EAB;
+  --color-admonition-border--tip: #E40EAB;
+  --color-admonition-border--important: #E40EAB;
+  --color-admonition-border--caution: #E40EAB;
+  --color-admonition-border--warning: #E40EAB;
+  
   }
   @media not print {
     body[data-theme="dark"] {
       --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
-
+  --color-brand-primary: #E40EAB;
+  --color-brand-content: #E40EAB;
+  
     }
     @media (prefers-color-scheme: dark) {
       body:not([data-theme="light"]) {
         --color-code-background: #202020;
   --color-code-foreground: #d0d0d0;
-
+  --color-brand-primary: #E40EAB;
+  --color-brand-content: #E40EAB;
+  
       }
     }
   }
 </style></head>
   <body>
-
+    
     <script>
       document.body.dataset.theme = localStorage.getItem("theme") || "auto";
     </script>
-
+    
 
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="svg-toc" viewBox="0 0 24 24">
@@ -186,12 +203,12 @@
   </header>
   <aside class="sidebar-drawer">
     <div class="sidebar-container">
-
+      
       <div class="sidebar-sticky"><a class="sidebar-brand" href="#">
-
-
+  
+  
   <span class="sidebar-brand-text">GS1Grader 0.1.0 documentation</span>
-
+  
 </a><form class="sidebar-search-container" method="get" action="search.html" role="search">
   <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
   <input type="hidden" name="check_keywords" value="yes">
@@ -204,14 +221,17 @@
 <li class="toctree-l1"><a class="reference internal" href="api/graders.html">Graders</a></li>
 <li class="toctree-l1"><a class="reference internal" href="api/reader.html">Reader</a></li>
 <li class="toctree-l1"><a class="reference internal" href="usage/installation.html">Installation Guide</a></li>
-<li class="toctree-l1"><a class="reference internal" href="usage/examples.html">Usage Examples</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="usage/examples.html">Usage Examples</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of Usage Examples</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/notebooks/examples.html">GS1 Grader Usage Examples</a></li>
+</ul>
+</li>
 </ul>
 
 </div>
 </div>
 
       </div>
-
+      
     </div>
   </aside>
   <div class="main">
@@ -246,17 +266,17 @@
         </div>
         <article role="main" id="furo-main-content">
           <section id="welcome-to-gs1grader-s-documentation">
-<h1>Welcome to GS1Grader’s documentation!<a class="headerlink" href="#welcome-to-gs1grader-s-documentation" title="Link to this heading"></a></h1>
+<h1>Welcome to GS1Grader’s documentation!<a class="headerlink" href="#welcome-to-gs1grader-s-documentation" title="Link to this heading">¶</a></h1>
 <p>GS1Grader is a Python library for grading Data Matrix codes using GS1 quality metrics with modulation and symbol contrast implementation.</p>
 <section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading">¶</a></h2>
 <p>You can install GS1Grader using pip:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>gs1grader
 </pre></div>
 </div>
 </section>
 <section id="system-dependencies">
-<h2>System Dependencies<a class="headerlink" href="#system-dependencies" title="Link to this heading"></a></h2>
+<h2>System Dependencies<a class="headerlink" href="#system-dependencies" title="Link to this heading">¶</a></h2>
 <p>Before installing, ensure you have the following system dependencies:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span><span class="se">\</span>
 <span class="w">    </span>libdmtx0b<span class="w"> </span><span class="se">\</span>
@@ -267,7 +287,7 @@
 </div>
 </section>
 <section id="quick-start">
-<h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading"></a></h2>
+<h2>Quick Start<a class="headerlink" href="#quick-start" title="Link to this heading">¶</a></h2>
 <p>Here’s a simple example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">core.grader_api</span><span class="w"> </span><span class="kn">import</span> <span class="n">DataMatrixGradeAPI</span>
 
@@ -315,6 +335,7 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="usage/examples.html">Usage Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage/examples.html#interactive-examples">Interactive Examples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usage/examples.html#basic-usage">Basic Usage</a></li>
 <li class="toctree-l2"><a class="reference internal" href="usage/examples.html#advanced-usage">Advanced Usage</a></li>
 </ul>
@@ -327,7 +348,7 @@
         </article>
       </div>
       <footer>
-
+        
         <div class="related-pages">
           <a class="next-page" href="api/grader_api.html">
               <div class="page-info">
@@ -338,28 +359,28 @@
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-
+          
         </div>
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2025, Kiran Krishna Tunuguntla
+                Copyright &#169; 2025, Ceyeborg GmbH
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
-
+            
             <a href="https://github.com/pradyunsg/furo">Furo</a>
-
+            
           </div>
           <div class="right-details">
-
+            
           </div>
         </div>
-
+        
       </footer>
     </div>
     <aside class="toc-drawer">
-
-
+      
+      
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
@@ -380,15 +401,16 @@
           </div>
         </div>
       </div>
-
-
+      
+      
     </aside>
   </div>
-</div><script src="_static/jquery.js?v=5d32c60e"></script>
-    <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
-    <script src="_static/documentation_options.js?v=01f34227"></script>
+</div><script src="_static/documentation_options.js?v=38b66d78"></script>
     <script src="_static/doctools.js?v=9bcbadda"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true}, "options": {"ignoreHtmlClass": "tex2jax_ignore|mathjax_ignore|document", "processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     </body>
 </html>
