@@ -1,6 +1,9 @@
 Grader API
 ==========
 
+Grader API
+----------
+
 .. automodule:: core.grader_api
    :members:
    :undoc-members:

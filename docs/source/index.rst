@@ -46,12 +46,11 @@ Here's a simple example:
    grade, explanation = grader_api.grade_datamatrix(
        image_path="path/to/your/datamatrix.png",
        grade_type="modulation",
-       explain=True
+       explanation_path="path/to/explanation_img.png"
    )
 
    print(f"Grade: {grade}")
-   if explanation:
-       print(f"Explanation: {explanation}")
+   print(f"Explanation is under: {explanation}")
 
 .. toctree::
    :maxdepth: 2
