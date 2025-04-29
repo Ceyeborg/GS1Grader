@@ -28,9 +28,9 @@ jobs:
             libxext6 \
             pandoc
 
-      - name: Install dependencies
+      - name: Install documentation dependencies
         run: |
-          pip install sphinx sphinx_rtd_theme myst_parser sphinx-tabs nbsphinx furo
+          pip install -r docs/requirements.txt
       
       - name: Install project dependencies
         run: |
