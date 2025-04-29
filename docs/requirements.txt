@@ -1,0 +1,6 @@
+sphinx>=4.0.0
+sphinx-tabs
+nbsphinx
+ipykernel
+pypandoc
+furo
