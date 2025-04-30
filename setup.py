@@ -28,7 +28,7 @@ def copy_custom_pylibdmtx():
 
         os.makedirs(target_dst, exist_ok=True)
 
-        files_to_copy = ["pylibdmtx.py", "wrapper.py", "dmtx_library.py"]
+        files_to_copy = ["pylibdmtx.py", "wrapper.py", "dmtx_library.py", "pylibdmtx_error.py"]
         for file in files_to_copy:
             src = os.path.join(submodule_src, file)
             dst = os.path.join(target_dst, file)

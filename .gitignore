@@ -77,6 +77,9 @@ docs/build/html/
 .pybuilder/
 target/
 
+# Pylibdmtx patches
+src/gs1grader/pylibdmtx/
+
 # Jupyter Notebook
 .ipynb_checkpoints
 
