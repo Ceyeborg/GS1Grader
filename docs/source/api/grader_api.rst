@@ -4,7 +4,7 @@ Grader API
 Grader API
 ----------
 
-.. automodule:: core.grader_api
+.. automodule:: gs1grader.grader_api
    :members:
    :undoc-members:
    :show-inheritance:
@@ -12,7 +12,7 @@ Grader API
 Grader Factory
 --------------
 
-.. automodule:: core.grader_factory
+.. automodule:: gs1grader.grader_factory
    :members:
    :undoc-members:
    :show-inheritance:

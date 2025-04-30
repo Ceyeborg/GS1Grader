@@ -41,12 +41,15 @@ pip install gs1grader
 
 If you want to install from source:
 ```bash
+# Clone the repo
 git clone --recurse-submodules https://github.com/Ceyeborg/GS1Grader.git
 cd GS1Grader
-cp external/pylibdmtx/pylibdmtx/pylibdmtx.py src/gs1grader/pylibdmtx/
-cp external/pylibdmtx/pylibdmtx/wrapper.py src/gs1grader/pylibdmtx/
-cp external/pylibdmtx/pylibdmtx/dmtx_library.py src/gs1grader/pylibdmtx/
-pip install -e .
+
+# Make the script executable
+chmod +x install.sh
+
+# Run the installation script
+./install.sh
 ```
 
 ## Usage
@@ -63,7 +66,7 @@ grader_api = DataMatrixGradeAPI()
 grade, explanation = grader_api.grade_datamatrix(
     image_path="path/to/your/datamatrix.png",
     grade_type="modulation",
-    explain=True
+    explanation_path="."
 )
 
 # Print the results
@@ -96,4 +99,3 @@ Methods:
 This project is licensed under the GNU Affero General Public License v3.0 (AGPL-3.0) - see the [LICENSE](LICENSE) file for details.
 
 The AGPL-3.0 is a copyleft license that requires anyone who distributes your code or a derivative work to make the source available under the same terms, and also requires you to provide the source code to users who interact with your software as a service.
-
