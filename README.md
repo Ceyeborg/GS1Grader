@@ -41,8 +41,11 @@ pip install gs1grader
 
 If you want to install from source:
 ```bash
-git clone https://github.com/yourusername/GS1Grader.git
+git clone --recurse-submodules https://github.com/Ceyeborg/GS1Grader.git
 cd GS1Grader
+cp external/pylibdmtx/pylibdmtx/pylibdmtx.py src/gs1grader/pylibdmtx/
+cp external/pylibdmtx/pylibdmtx/wrapper.py src/gs1grader/pylibdmtx/
+cp external/pylibdmtx/pylibdmtx/dmtx_library.py src/gs1grader/pylibdmtx/
 pip install -e .
 ```
 
@@ -51,7 +54,7 @@ pip install -e .
 Here's a simple example of how to use GS1Grader:
 
 ```python
-from core.grader_api import DataMatrixGradeAPI
+from gs1grader.grader_api import DataMatrixGradeAPI
 
 # Create a grading API instance
 grader_api = DataMatrixGradeAPI()

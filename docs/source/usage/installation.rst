@@ -77,7 +77,7 @@ To verify your installation:
 
 .. code-block:: python
 
-    from core.grader_api import DataMatrixGradeAPI
+    from gs1grader.grader_api import DataMatrixGradeAPI
 
     # Should create instance without errors
     grader = DataMatrixGradeAPI()

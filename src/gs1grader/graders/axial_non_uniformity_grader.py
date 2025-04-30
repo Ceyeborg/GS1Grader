@@ -1,5 +1,5 @@
-from core.common import DecodedDmtxData
-from core.grader_interface import DataMatrixGraderInterface
+from gs1grader.common import DecodedDmtxData
+from gs1grader.grader_interface import DataMatrixGraderInterface
 
 
 class AxialNonUniformityGrader(DataMatrixGraderInterface):

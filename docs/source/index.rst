@@ -37,7 +37,7 @@ Here's a simple example:
 
 .. code-block:: python
 
-   from core.grader_api import DataMatrixGradeAPI
+   from gs1grader.grader_api import DataMatrixGradeAPI
 
    # Create a grading API instance
    grader_api = DataMatrixGradeAPI()
