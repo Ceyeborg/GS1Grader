@@ -77,7 +77,7 @@ Alternatively, you can install GS1Grader sdist using pip:
 
 .. code-block:: bash
 
-    pip install gs1grader-x.x.x.tar.gz
+    pip install gs1grader
 
 
 Verifying Installation
