@@ -4,7 +4,7 @@ Graders
 Axial Non Uniformity Grader
 ---------------------------
 
-.. automodule:: core.graders.axial_non_uniformity_grader
+.. automodule:: gs1grader.graders.axial_non_uniformity_grader
    :members:
    :undoc-members:
    :show-inheritance:
@@ -12,7 +12,7 @@ Axial Non Uniformity Grader
 Fixed Pattern Damage Grader
 ---------------------------
 
-.. automodule:: core.graders.fixed_pattern_damage_grader
+.. automodule:: gs1grader.graders.fixed_pattern_damage_grader
    :members:
    :undoc-members:
    :show-inheritance:
@@ -20,7 +20,7 @@ Fixed Pattern Damage Grader
 Grid Non Uniformity Grader
 --------------------------
 
-.. automodule:: core.graders.grid_non_uniformity_grader
+.. automodule:: gs1grader.graders.grid_non_uniformity_grader
    :members:
    :undoc-members:
    :show-inheritance:
@@ -28,7 +28,7 @@ Grid Non Uniformity Grader
 Modulation Grader
 -----------------
 
-.. automodule:: core.graders.modulation_grader
+.. automodule:: gs1grader.graders.modulation_grader
    :members:
    :undoc-members:
    :show-inheritance:
@@ -36,7 +36,7 @@ Modulation Grader
 Symbol Contrast Grader
 ----------------------
 
-.. automodule:: core.graders.symbol_contrast_grader
+.. automodule:: gs1grader.graders.symbol_contrast_grader
    :members:
    :undoc-members:
    :show-inheritance:
@@ -44,7 +44,7 @@ Symbol Contrast Grader
 Unused Error Correction Grader
 ------------------------------
 
-.. automodule:: core.graders.uec_grader
+.. automodule:: gs1grader.graders.uec_grader
    :members:
    :undoc-members:
    :show-inheritance:

@@ -1,4 +1,4 @@
-from core.grader_interface import DataMatrixGraderInterface
+from gs1grader.grader_interface import DataMatrixGraderInterface
 
 
 class UECGrader(DataMatrixGraderInterface):

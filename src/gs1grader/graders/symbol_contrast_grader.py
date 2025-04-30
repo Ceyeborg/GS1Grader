@@ -1,5 +1,5 @@
-from core.common import DecodedDmtxData, get_modulation_attributes
-from core.grader_interface import DataMatrixGraderInterface
+from gs1grader.common import DecodedDmtxData, get_modulation_attributes
+from gs1grader.grader_interface import DataMatrixGraderInterface
 
 
 class SymbolContrastGrader(DataMatrixGraderInterface):

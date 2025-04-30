@@ -14,16 +14,22 @@ See Also:
     - `SymbolContrastGrader`: Grader for symbol contrast
 """
 
-from core.common import DecodedDmtxData
-from core.grader_factory import DataMatrixGraderFactory
-from core.graders.axial_non_uniformity_grader import AxialNonUniformityGrader
-from core.graders.fixed_pattern_damage_grader import FixedPatternDamageGrader
-from core.graders.grid_non_uniformity_grader import GridNonUniformityGrader
-from core.graders.modulation_grader import ModulationGrader
-from core.graders.symbol_contrast_grader import SymbolContrastGrader
-from core.graders.uec_grader import UECGrader
-from core.reader.data_matrix_decoder import DataMatrixQADecoder
-from core.reader.data_matrix_reader import DataMatrixQAReader
+from gs1grader.common import DecodedDmtxData
+from gs1grader.grader_factory import DataMatrixGraderFactory
+from gs1grader.graders.axial_non_uniformity_grader import (
+    AxialNonUniformityGrader,
+)
+from gs1grader.graders.fixed_pattern_damage_grader import (
+    FixedPatternDamageGrader,
+)
+from gs1grader.graders.grid_non_uniformity_grader import (
+    GridNonUniformityGrader,
+)
+from gs1grader.graders.modulation_grader import ModulationGrader
+from gs1grader.graders.symbol_contrast_grader import SymbolContrastGrader
+from gs1grader.graders.uec_grader import UECGrader
+from gs1grader.reader.data_matrix_decoder import DataMatrixQADecoder
+from gs1grader.reader.data_matrix_reader import DataMatrixQAReader
 
 
 class DataMatrixGradeAPI:

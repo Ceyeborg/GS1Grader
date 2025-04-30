@@ -25,7 +25,7 @@ Before installing GS1Grader, ensure you have the following system dependencies i
     .. tab:: Mac OS:
 
         .. code-block:: bash
-        
+
             # Install Homebrew if not already installed
             /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
@@ -51,7 +51,7 @@ The easiest way to install GS1Grader is using the provided installation script. 
 .. code-block:: bash
 
     # Clone the repo
-    git clone https://github.com/yourusername/GS1Grader.git
+    git clone --recurse-submodules https://github.com/Ceyeborg/GS1Grader.git
     cd GS1Grader
 
     # Make the script executable
@@ -77,7 +77,7 @@ To verify your installation:
 
 .. code-block:: python
 
-    from core.grader_api import DataMatrixGradeAPI
+    from gs1grader.grader_api import DataMatrixGradeAPI
 
     # Should create instance without errors
     grader = DataMatrixGradeAPI()

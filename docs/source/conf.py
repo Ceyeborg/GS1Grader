@@ -32,7 +32,7 @@ templates_path = ["_templates"]
 exclude_patterns = []
 
 # nbsphinx settings
-nbsphinx_execute = 'auto'  # Auto-execute notebooks
+nbsphinx_execute = "auto"  # Auto-execute notebooks
 nbsphinx_allow_errors = True  # Allow errors in notebooks
 nbsphinx_timeout = 600  # Increase timeout for notebook execution
 
@@ -58,7 +58,6 @@ html_theme_options = {
         "color-admonition-border--important": "#E40EAB",
         "color-admonition-border--caution": "#E40EAB",
         "color-admonition-border--warning": "#E40EAB",
-
     },
     "dark_css_variables": {
         "color-brand-primary": "#E40EAB",

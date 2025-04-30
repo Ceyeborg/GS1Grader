@@ -31,13 +31,14 @@ jobs:
       - name: Install documentation dependencies
         run: |
           pip install -r docs/requirements.txt
-      
+
       - name: Install project dependencies
         run: |
           pip install -r requirements.txt
 
       - name: Build Sphinx documentation
         run: |
+          pip install -e .
           cd docs && make html
 
       - name: Deploy to GitHub Pages

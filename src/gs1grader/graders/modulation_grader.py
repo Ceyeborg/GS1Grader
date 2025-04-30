@@ -6,12 +6,12 @@ import matplotlib.patches as mpatches
 import matplotlib.pyplot as plt
 import numpy as np
 
-from core.common import (
+from gs1grader.common import (
     DecodedDmtxData,
     get_modulation_attributes,
     map_raw_fit_x_y,
 )
-from core.grader_interface import DataMatrixGraderInterface
+from gs1grader.grader_interface import DataMatrixGraderInterface
 
 
 class ModulationGrader(DataMatrixGraderInterface):

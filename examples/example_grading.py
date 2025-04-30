@@ -1,4 +1,4 @@
-from core.grader_api import DataMatrixGradeAPI
+from gs1grader.grader_api import DataMatrixGradeAPI
 
 # Simple usage
 grader_api = DataMatrixGradeAPI()

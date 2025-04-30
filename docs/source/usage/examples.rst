@@ -23,7 +23,7 @@ Here's a basic example of grading a Data Matrix code:
 
 .. code-block:: python
 
-    from core.grader_api import DataMatrixGradeAPI
+    from gs1grader.grader_api import DataMatrixGradeAPI
 
     # Create grader instance
     grader = DataMatrixGradeAPI()
@@ -48,7 +48,7 @@ Example of using different grading methods:
 
 .. code-block:: python
 
-    from core.grader_api import DataMatrixGradeAPI
+    from gs1grader.grader_api import DataMatrixGradeAPI
 
     grader = DataMatrixGradeAPI()
     grade_types=["modulation", "symbol_contrast"]
