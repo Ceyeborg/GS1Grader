@@ -91,7 +91,7 @@ Methods:
 - `grade_datamatrix(image_path: str, grade_type: str, explain: bool = False)`:
   - `image_path`: Path to the Data Matrix image file
   - `grade_type`: Type of grading to perform ("modulation" or "symbol_contrast")
-  - `explain`: Whether to provide detailed explanation of the grade (optional)
+  - `explanation_path`: Provide a path to save png of the detailed explanation of the grade (optional)
   - Returns: A tuple of (grade, explanation)
 
 ## License
