@@ -54,10 +54,10 @@ Example of using different grading methods:
     grade_types=["modulation", "symbol_contrast"]
 
     for grade_type in grade_types:
-        grade, exaplanation = grader.grade_datamatrix(
+        grade, explanation = grader.grade_datamatrix(
             image_path="path/to/image.png",
             grade_type=grade_type,
-            exaplanation_path="path/to/expalantion_img"
+            explanation_path="path/to/expalantion_img"
         )
         print(f"For {grade_type} -> Grade: {grade}")
         print(f"For {grade_type} -> Explanation is under: {exaplanation}")

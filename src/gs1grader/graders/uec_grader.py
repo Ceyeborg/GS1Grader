@@ -45,7 +45,7 @@ class UECGrader(DataMatrixGraderInterface):
     def explain_grade(self, data):
         """
         Provide an explanation for the UEC grade of the given
-        data matrix paramters.
+        data matrix parameters.
 
         :param data:
         :type data: DecodedDmtxData
