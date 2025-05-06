@@ -2,7 +2,7 @@
 
 ![Banner](GitHub%20Header-UDI.jpg)
 
-GS1Grader is a Python library for grading Data Matrix codes using GS1 quality metrics with modulation and symbol contrast implementation.
+GS1Grader is a Python library for grading Data Matrix codes using GS1 quality metrics with modulation and symbol contrast implementation essential for UDI (Unique Device Identification) compliance in medical devices. 
 
 ## Prerequisites
 
