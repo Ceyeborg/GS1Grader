@@ -1,4 +1,4 @@
-from gs1grader.pylibdmtx.pylibdmtx import Decoded, decode
+from pylibdmtx.pylibdmtx import Decoded, decode
 
 
 class DataMatrixQADecoder:

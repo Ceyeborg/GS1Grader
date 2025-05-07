@@ -12,7 +12,7 @@ python         = ">=3.9,<3.13"
 matplotlib     = "3.8.2"
 numpy          = "1.26.2"
 opencv-python  = "4.8.1.78"
-pylibdmtx      = "0.1.10"
+pylibdmtx      = {git = "https://github.com/Ceyeborg/pylibdmtx", rev = "gs1grader"}
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^6.0.0"

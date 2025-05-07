@@ -61,14 +61,11 @@ The easiest way to install GS1Grader is using the provided installation script. 
 .. code-block:: bash
 
     # Clone the repo
-    git clone --recurse-submodules https://github.com/Ceyeborg/GS1Grader.git
+    git clone https://github.com/Ceyeborg/GS1Grader.git
     cd GS1Grader
 
-    # Make the script executable
-    chmod +x install.sh
+    poetry install
 
-    # Run the installation script
-    ./install.sh
 
 Using pip
 ~~~~~~~~~

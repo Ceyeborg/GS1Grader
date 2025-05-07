@@ -30,30 +30,35 @@ sudo apt-get install -y \
 # Install the required dependencies
 brew install libdmtx
 brew install ffmpeg
+brew install uv
 ```
 
 These system dependencies are required for proper functioning of OpenCV and pylibdmtx.
 
-## Installation
+## Installation with uv
+
+create a virtual environment using `uv` and a suitable Python version (3.11 or higher):
+
+```bash
+uv venv .venv --python 3.11
+source .venv/bin/activate
+
+```
 
 You can now install GS1Grader using pip:
 
 ```bash
-pip install gs1grader
+uv pip install gs1grader
 ```
 
 Or if you want to install from source:
 
 ```bash
 # Clone the repo
-git clone --recurse-submodules https://github.com/Ceyeborg/GS1Grader.git
+git clone https://github.com/Ceyeborg/GS1Grader.git
 cd GS1Grader
 
-# Make the script executable
-chmod +x install.sh
-
-# Run the installation script
-./install.sh
+poetry install
 ```
 
 ## Usage
