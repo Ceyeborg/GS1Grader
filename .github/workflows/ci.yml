@@ -30,7 +30,12 @@ jobs:
     - name: Install system dependencies
       run: sudo apt install -y libdmtx0b ffmpeg libsm6 libxext6
     - name: Test with pytest
-      run: poetry run pytest --cov=src/gs1grader tests
+      run: poetry run pytest --cov=src/gs1grader tests --cov-report xml:coverage.xml
+    - name: Display coverage results
+      uses: orgoro/coverage@v3.2
+      with:
+          coverageFile: coverage.xml
+          token: ${{ secrets.GITHUB_TOKEN }}
 
   release:
     needs: quality_check
