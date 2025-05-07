@@ -17,6 +17,7 @@ pylibdmtx      = "0.1.10"
 [tool.poetry.group.dev.dependencies]
 pytest = "^6.0.0"
 flake8 = "*"
+coverage = "*"
 
 # ← this must be an array of tables, not a single table
 [[tool.poetry.packages]]
@@ -28,7 +29,26 @@ requires    = ["poetry-core>=2.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.semantic_release]
-version_variables = ["setup.py:__version__","src/gs1grader/__init__.py:__version__"]
+version_variables = ["setup.py:__version__", "src/gs1grader/__init__.py:__version__"]
 upload_to_pypi = true
 upload_to_release = false
 build_command = "pip install poetry && poetry build"
+
+[tool.black]
+target-version = ['py311']
+line-length = 160
+skip_magic_trailing_comma = true
+
+[tool.flake8]
+max-line-length = 160
+
+[tool.pylint.'MESSAGES CONTROL']
+max-line-length = 160
+
+[tool.pytest.ini_options]
+addopts = "-W ignore::DeprecationWarning"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.coverage.run]
+omit = ["tests"]
