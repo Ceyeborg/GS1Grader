@@ -2,14 +2,14 @@
 
 ![Banner](GitHub%20Header-UDI.jpg)
 
-GS1Grader is a Python library for grading Data Matrix codes using GS1 quality metrics with modulation and symbol contrast implementation essential for UDI (Unique Device Identification) compliance in medical devices. 
+GS1Grader is a Python library for grading Data Matrix codes using GS1 quality metrics with modulation and symbol contrast implementation essential for UDI (Unique Device Identification) compliance in medical devices.
 
 ## Prerequisites
 
 Before installing GS1Grader, you need to install some system dependencies:
 
-
 ### Ubuntu/Debian
+
 ```bash
 sudo apt-get update
 sudo apt-get install -y \
@@ -20,6 +20,7 @@ sudo apt-get install -y \
 ```
 
 ### Mac OS
+
 ```bash
 # Install Homebrew if not already installed
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -40,6 +41,7 @@ pip install gs1grader
 ```
 
 If you want to install from source:
+
 ```bash
 # Clone the repo
 git clone --recurse-submodules https://github.com/Ceyeborg/GS1Grader.git
@@ -78,6 +80,7 @@ if explanation:
 ### Available Grading Methods
 
 The library currently supports the following grading methods:
+
 - `modulation`: Evaluates the modulation quality of the Data Matrix
 - `symbol_contrast`: Evaluates the symbol contrast quality
 
@@ -88,6 +91,7 @@ The library currently supports the following grading methods:
 The main class for grading Data Matrix codes.
 
 Methods:
+
 - `grade_datamatrix(image_path: str, grade_type: str, explain: bool = False)`:
   - `image_path`: Path to the Data Matrix image file
   - `grade_type`: Type of grading to perform ("modulation" or "symbol_contrast")
