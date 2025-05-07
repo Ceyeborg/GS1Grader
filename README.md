@@ -1,4 +1,4 @@
-# GS1Grader
+# GS1Grader for UDI Vision Inspection
 
 ![Banner](GitHub%20Header-UDI.jpg)
 
