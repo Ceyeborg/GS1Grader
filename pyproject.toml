@@ -16,6 +16,7 @@ pylibdmtx      = {git = "https://github.com/Ceyeborg/pylibdmtx", rev = "gs1grade
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^6.0.0"
+pytest-cov = "^4.0.0"
 flake8 = "*"
 coverage = "*"
 

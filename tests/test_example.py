@@ -18,6 +18,7 @@ def test_example():
 
     assert grade is not None, "Grading failed, no grade returned."
     assert explanation is not None, "Grading failed, no explanation returned."
+    assert grade == 'D', "Grading failed, expected grade is D."
 
 
 def test_example_reference():
@@ -37,3 +38,4 @@ def test_example_reference():
 
     assert grade is not None, "Grading failed, no grade returned."
     assert explanation is not None, "Grading failed, no explanation returned."
+    assert grade == 'A', "Grading failed, expected grade is A."

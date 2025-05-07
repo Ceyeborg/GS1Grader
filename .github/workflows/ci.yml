@@ -30,9 +30,9 @@ jobs:
     - name: Install system dependencies
       run: sudo apt install -y libdmtx0b ffmpeg libsm6 libxext6
     - name: Test with pytest
-      run: poetry run python -m pytest -v tests
+      run: poetry run pytest --cov=src/gs1grader tests
 
-  Release:
+  release:
     needs: quality_check
     if: github.event_name == 'push' && github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, 'chore(release):')
     runs-on: ubuntu-latest
