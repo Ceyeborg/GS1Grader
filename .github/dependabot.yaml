@@ -1,0 +1,36 @@
+# config for dependabot
+version: 2
+updates:
+  # Maintain dependencies for Python packages managed by Poetry
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    # Group all minor and patch updates into a single PR
+    groups:
+      python-packages:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+    # Set reviewers if needed
+    # reviewers:
+    #   - "your-github-username"
+
+  # Maintain dependencies for GitHub Actions
+  # Maintain dependencies for GitHub Actions workflows
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    # Group all minor and patch updates for GitHub Actions into a single PR
+    groups:
+      github-actions:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
+          - "patch"

@@ -1,18 +1,36 @@
-[tool.poetry]
+[project]
 name        = "gs1grader"
 version     = "0.1.2"
 description = "A library for grading Data Matrix codes via GS1 QA metrics"
-authors     = ["Ceyeb.org <info@ceyeb.org>"]
+authors = [
+    {name = "Ceyeb.org", email = "info@ceyeb.org"}
+]
 readme      = "README.md"
 license     = "MIT"
-homepage    = "https://github.com/Ceyeborg/GS1Grader"
+license-files = ["LICEN[CS]E.*"]
 
-[tool.poetry.dependencies]
-python         = ">=3.9,<3.13"
-matplotlib     = "3.8.2"
-numpy          = "1.26.2"
-opencv-python  = "4.8.1.78"
-pylibdmtx      = {git = "https://github.com/Ceyeborg/pylibdmtx", rev = "gs1grader"}
+requires-python = ">=3.9,<3.13"
+dependencies = [
+    "matplotlib>=3.8.2,<4.0",
+    "numpy>=1.26,<2.0",
+    "opencv-python>=4.8,<5.0",
+    "pylibdmtx @ git+https://github.com/Ceyeborg/pylibdmtx@gs1grader"
+]
+
+keywords    = ["GS1", "Data Matrix", "grading", "quality assurance"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Repository  = "https://github.com/Ceyeborg/GS1Grader"
+Documentation = "https://ceyeborg.github.io/GS1Grader"
+
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^6.0.0"
@@ -28,7 +46,8 @@ ipykernel = "*"
 pypandoc = "*"
 furo = "*"
 
-# ← this must be an array of tables, not a single table
+# Poetry requires `packages` to be an array of tables because it allows specifying multiple packages to include,
+# each with its own configuration. Using a single table would not support this flexibility.
 [[tool.poetry.packages]]
 include = "gs1grader"
 from    = "src"
@@ -38,7 +57,7 @@ requires    = ["poetry-core>=2.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.semantic_release]
-version_variables = ["setup.py:__version__", "src/gs1grader/__init__.py:__version__"]
+version_variables = ["src/gs1grader/__init__.py:__version__"]
 upload_to_pypi = true
 upload_to_release = false
 build_command = "pip install poetry && poetry build"
