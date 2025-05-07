@@ -20,6 +20,14 @@ pytest-cov = "^4.0.0"
 flake8 = "*"
 coverage = "*"
 
+[tool.poetry.group.documentation.dependencies]
+sphinx = ">=4.0.0"
+sphinx-tabs = "*"
+nbsphinx = "*"
+ipykernel = "*"
+pypandoc = "*"
+furo = "*"
+
 # ← this must be an array of tables, not a single table
 [[tool.poetry.packages]]
 include = "gs1grader"
