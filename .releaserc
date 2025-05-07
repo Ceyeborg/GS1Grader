@@ -1,5 +1,5 @@
 {
-"branch": "main",
-"version_variable": "src/__init__.py:__version__",
-"upload_to_pypi": true
+    "branch": "main",
+    "version_variable": "src/__init__.py:__version__",
+    "upload_to_pypi": true
 }

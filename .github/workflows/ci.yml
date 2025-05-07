@@ -6,45 +6,79 @@ on:
     branches: [ main ]
 
 jobs:
-  Quality:
+  quality_check:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
-    - uses: actions/setup-python@v5
+    - name: Checkout code
+      uses: actions/checkout@v4
+      with:
+        submodules: true
+    - name: Setup Python
+      uses: actions/setup-python@v5
       with:
         python-version: 3.11
     - name: Install Poetry
-      shell: bash
       run: pip install poetry==2.1.3
     - name: Configure poetry
-      shell: bash
       run: poetry config virtualenvs.in-project true
     - name: Install dependencies
-      run: |
-        poetry install --with dev
+      run: poetry install --with dev
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
-        python -m poetry run flake8 . --exclude .venv --count --select=E9,F63,F7,F82 --show-source --statistics
-        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        python -m poetry run flake8 . --exclude .venv --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        poetry run flake8 . --exclude .venv --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 160 chars wide
+        poetry run flake8 . --exclude .venv --count --exit-zero --max-complexity=10 --max-line-length=160 --statistics
     - name: Test with pytest
-      run: |
-        python -m poetry run python -m pytest -v tests
-    
+      run: poetry run python -m pytest -v tests
+
   Release:
-    needs: Quality
+    needs: quality_check
     if: github.event_name == 'push' && github.ref == 'refs/heads/main' && !contains(github.event.head_commit.message, 'chore(release):')
     runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-release-${{ github.ref_name }}
+      cancel-in-progress: false
+
+    permissions:
+      id-token: write
+      contents: write
+
+    environment:
+      name: pypi
+      url: https://pypi.org/p/gs1grader
+
     steps:
-      - uses: actions/setup-python@v5
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
           python-version: 3.11
-      - name: Checkout code
+      - name: Checkout Repository on Release Branch
         uses: actions/checkout@v4
-      - name: Semantic Release
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+  
+      - name: Force release branch to be at workflow sha
         run: |
-          pip install python-semantic-release
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          semantic-release publish
+          git reset --hard ${{ github.sha }}
+
+      - name: Semantic Version Release
+        id: release
+        # Adjust tag with desired version if applicable.
+        uses: python-semantic-release/python-semantic-release@v9.21.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          git_committer_name: "github-actions"
+          git_committer_email: "actions@users.noreply.github.com"
+
+      - name: Publish | Upload to GitHub Release Assets
+        uses: python-semantic-release/publish-action@v9.21.1
+        if: steps.release.outputs.released == 'true'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ steps.release.outputs.tag }}
+
+      - name: Publish | Upload package to PyPI
+        uses: pypa/gh-action-pypi-publish@v1.12.4
+        if: steps.release.outputs.released == 'true'

@@ -2,7 +2,9 @@
 
 ![Banner](GitHub%20Header-UDI.jpg)
 
-GS1Grader is a Python library for grading Data Matrix codes using GS1 quality metrics with modulation and symbol contrast implementation essential for UDI (Unique Device Identification) compliance in medical devices.
+GS1Grader is a Python library for grading Data Matrix codes
+using GS1 quality metrics with modulation and symbol contrast implementation
+essential for UDI (Unique Device Identification) compliance in medical devices.
 
 ## Prerequisites
 
@@ -25,7 +27,7 @@ sudo apt-get install -y \
 # Install Homebrew if not already installed
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# Install required dependencies
+# Install the required dependencies
 brew install libdmtx
 brew install ffmpeg
 ```
@@ -34,13 +36,13 @@ These system dependencies are required for proper functioning of OpenCV and pyli
 
 ## Installation
 
-You can install GS1Grader using pip:
+You can now install GS1Grader using pip:
 
 ```bash
 pip install gs1grader
 ```
 
-If you want to install from source:
+Or if you want to install from source:
 
 ```bash
 # Clone the repo
