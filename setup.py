@@ -7,6 +7,7 @@ from setuptools.command.install import install
 
 __version__ = "0.1.2"
 
+
 def copy_custom_pylibdmtx():
     """
     Copy patched pylibdmtx files from the submodule into the
@@ -80,7 +81,7 @@ setup(
     long_description_content_type="text/markdown",
     url="https://github.com/Ceyeborg/GS1Grader",
     classifiers=[],
-    python_requires=">=3.6",
+    python_requires=">=3.9",
     cmdclass={
         "install": CustomInstall,
         "develop": CustomDevelop,
