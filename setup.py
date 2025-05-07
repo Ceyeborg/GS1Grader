@@ -62,7 +62,7 @@ class CustomDevelop(develop):
 
 setup(
     name="gs1grader",
-    version="0.1.1",
+    version="0.1.2",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     install_requires=[
