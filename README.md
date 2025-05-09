@@ -31,6 +31,7 @@ sudo apt-get install -y \
 brew install libdmtx
 brew install ffmpeg
 brew install uv
+brew install poetry
 ```
 
 These system dependencies are required for proper functioning of OpenCV and pylibdmtx.

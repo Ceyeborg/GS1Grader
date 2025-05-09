@@ -1,6 +1,6 @@
 [project]
 name        = "gs1grader"
-version     = "0.1.2"
+dynamic = ["version"]
 description = "A library for grading Data Matrix codes via GS1 QA metrics"
 authors = [
     {name = "Ceyeb.org", email = "info@ceyeb.org"}
@@ -23,7 +23,7 @@ classifiers = [
     "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
-    "License :: OSI Approved :: MIT License",
+    "License :: OSI Approved ::  AGLP-3.0 License",
     "Operating System :: OS Independent",
 ]
 
