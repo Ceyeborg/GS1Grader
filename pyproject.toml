@@ -35,15 +35,15 @@ Documentation = "https://ceyeborg.github.io/GS1Grader"
 version = "0.1.2"  # base version
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^6.0.0"
-pytest-cov = "^4.0.0"
+pytest = "^8.3.5"
+pytest-cov = "^6.1.1"
 flake8 = "*"
 coverage = "*"
 
 [tool.poetry.group.documentation.dependencies]
 sphinx = ">=4.0.0"
 sphinx-tabs = "*"
-nbsphinx = "*"
+nbsphinx = "^0.9.7"
 ipykernel = "*"
 pypandoc = "*"
 furo = "*"
