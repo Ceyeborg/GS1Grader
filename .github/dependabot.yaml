@@ -33,4 +33,3 @@ updates:
         update-types:
           - "minor"
           - "patch"
-          - "patch"
