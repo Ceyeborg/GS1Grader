@@ -25,13 +25,13 @@ jobs:
         run: pip install poetry
 
       - name: Install documentation dependencies
-        run: poetry install --with documentation
+        run: poetry install --with documentation && $(poetry env activate) 
 
       - name: Build Sphinx documentation
         run: cd docs && make html
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' }}
         with:
           publish_branch: gh-pages
