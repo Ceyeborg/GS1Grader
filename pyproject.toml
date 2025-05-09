@@ -1,0 +1,103 @@
+[project]
+name        = "gs1grader"
+dynamic = ["version"]
+description = "A library for grading Data Matrix codes via GS1 QA metrics"
+authors = [
+    {name = "Ceyeb.org", email = "info@ceyeb.org"}
+]
+readme      = "README.md"
+license     = "AGLP-3.0"
+license-files = ["LICEN[CS]E.*"]
+
+requires-python = ">=3.9,<3.13"
+dependencies = [
+    "matplotlib>=3.8.2,<4.0",
+    "numpy>=1.26,<2.0",
+    "opencv-python>=4.8,<5.0",
+    "pylibdmtx @ git+https://github.com/Ceyeborg/pylibdmtx@gs1grader"
+]
+
+keywords    = ["GS1", "Data Matrix", "grading", "quality assurance"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "License :: OSI Approved ::  AGLP-3.0 License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Repository  = "https://github.com/Ceyeborg/GS1Grader"
+Documentation = "https://ceyeborg.github.io/GS1Grader"
+
+[tool.poetry]
+version = "0.1.2"  # base version
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^6.0.0"
+pytest-cov = "^4.0.0"
+flake8 = "*"
+coverage = "*"
+
+[tool.poetry.group.documentation.dependencies]
+sphinx = ">=4.0.0"
+sphinx-tabs = "*"
+nbsphinx = "*"
+ipykernel = "*"
+pypandoc = "*"
+furo = "*"
+
+# Poetry requires `packages` to be an array of tables because it allows specifying multiple packages to include,
+# each with its own configuration. Using a single table would not support this flexibility.
+[[tool.poetry.packages]]
+include = "gs1grader"
+from    = "src"
+
+[build-system]
+requires    = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.semantic_release]
+version_variables = ["src/gs1grader/__init__.py:__version__"]
+upload_to_pypi = true
+upload_to_release = false
+build_command = "pip install poetry && poetry build"
+
+[tool.semantic_release.changelog.default_templates]
+changelog_file = "CHANGELOG.md"
+output_format = "md"
+mask_initial_release = false
+
+[tool.semantic_release.changelog.environment]
+block_start_string = "{%"
+block_end_string = "%}"
+variable_start_string = "{{"
+variable_end_string = "}}"
+comment_start_string = "{#"
+comment_end_string = "#}"
+trim_blocks = false
+lstrip_blocks = false
+newline_sequence = "\n"
+keep_trailing_newline = false
+extensions = []
+autoescape = false
+
+[tool.black]
+target-version = ['py311']
+line-length = 160
+skip_magic_trailing_comma = true
+
+[tool.flake8]
+max-line-length = 160
+
+[tool.pylint.'MESSAGES CONTROL']
+max-line-length = 160
+
+[tool.pytest.ini_options]
+addopts = "-W ignore::DeprecationWarning"
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+
+[tool.coverage.run]
+omit = ["tests"]

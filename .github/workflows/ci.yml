@@ -1,0 +1,92 @@
+name: CI
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  quality_check:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    - name: Setup Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: 3.11
+    - name: Install Poetry
+      run: pip install poetry
+    - name: Configure poetry
+      run: poetry config virtualenvs.in-project true
+    - name: Install dependencies
+      run: poetry install --with dev
+    - name: Lint with flake8
+      run: |
+        # Fail build on syntax errors or undefined names
+        poetry run flake8 . --exclude .venv --count --select=E9,F63,F7,F82 --show-source --statistics
+        # Using exit-zero to treat all errors as warnings for non-blocking linting.
+        poetry run flake8 . --exclude .venv --count --exit-zero --max-complexity=10 --max-line-length=160 --statistics
+    - name: Install system dependencies
+      run: sudo apt install -y libdmtx0b ffmpeg libsm6 libxext6
+    - name: Test with pytest
+      run: poetry run pytest --cov=src/gs1grader tests --cov-report xml:coverage.xml
+    - name: Display coverage results
+      uses: orgoro/coverage@v3.2
+      with:
+          coverageFile: coverage.xml
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+  release:
+    needs: quality_check
+    if: >
+      github.event_name == 'push' &&
+      github.ref == 'refs/heads/main' &&
+      !contains(github.event.head_commit.message, 'chore(release):')
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.workflow }}-release-${{ github.ref_name }}
+      cancel-in-progress: false
+
+    permissions:
+      id-token: write
+      contents: write
+
+    environment:
+      name: pypi
+      url: https://pypi.org/p/gs1grader
+
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+      - name: Checkout Repository on Release Branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+          fetch-depth: 0
+  
+      - name: Force release branch to be at workflow sha
+        run: |
+          git reset --hard ${{ github.sha }}
+
+      - name: Semantic Version Release
+        id: release
+        # Adjust tag with desired version if applicable.
+        uses: python-semantic-release/python-semantic-release@v9.21.1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          git_committer_name: "github-actions"
+          git_committer_email: "actions@users.noreply.github.com"
+
+      - name: Publish | Upload to GitHub Release Assets
+        uses: python-semantic-release/publish-action@v9.21.1
+        if: steps.release.outputs.released == 'true'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ steps.release.outputs.tag }}
+
+      - name: Publish | Upload package to PyPI
+        uses: pypa/gh-action-pypi-publish@v1.12.4
+        if: steps.release.outputs.released == 'true'

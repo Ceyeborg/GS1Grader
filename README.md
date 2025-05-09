@@ -2,14 +2,16 @@
 
 ![Banner](GitHub%20Header-UDI.jpg)
 
-GS1Grader is a Python library for grading Data Matrix codes using GS1 quality metrics with modulation and symbol contrast implementation essential for UDI (Unique Device Identification) compliance in medical devices. 
+GS1Grader is a Python library for grading Data Matrix codes
+using GS1 quality metrics with modulation and symbol contrast implementation
+essential for UDI (Unique Device Identification) compliance in medical devices.
 
 ## Prerequisites
 
 Before installing GS1Grader, you need to install some system dependencies:
 
-
 ### Ubuntu/Debian
+
 ```bash
 sudo apt-get update
 sudo apt-get install -y \
@@ -20,36 +22,44 @@ sudo apt-get install -y \
 ```
 
 ### Mac OS
+
 ```bash
 # Install Homebrew if not already installed
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# Install required dependencies
+# Install the required dependencies
 brew install libdmtx
 brew install ffmpeg
+brew install uv
+brew install poetry
 ```
 
 These system dependencies are required for proper functioning of OpenCV and pylibdmtx.
 
-## Installation
+## Installation with uv
 
-You can install GS1Grader using pip:
+create a virtual environment using `uv` and a suitable Python version (3.11 or higher):
 
 ```bash
-pip install gs1grader
+uv venv .venv --python 3.11
+source .venv/bin/activate
+
 ```
 
-If you want to install from source:
+You can now install GS1Grader using pip:
+
+```bash
+uv pip install gs1grader
+```
+
+Or if you want to install from source:
+
 ```bash
 # Clone the repo
-git clone --recurse-submodules https://github.com/Ceyeborg/GS1Grader.git
+git clone https://github.com/Ceyeborg/GS1Grader.git
 cd GS1Grader
 
-# Make the script executable
-chmod +x install.sh
-
-# Run the installation script
-./install.sh
+poetry install
 ```
 
 ## Usage
@@ -78,6 +88,7 @@ if explanation:
 ### Available Grading Methods
 
 The library currently supports the following grading methods:
+
 - `modulation`: Evaluates the modulation quality of the Data Matrix
 - `symbol_contrast`: Evaluates the symbol contrast quality
 
@@ -88,6 +99,7 @@ The library currently supports the following grading methods:
 The main class for grading Data Matrix codes.
 
 Methods:
+
 - `grade_datamatrix(image_path: str, grade_type: str, explain: bool = False)`:
   - `image_path`: Path to the Data Matrix image file
   - `grade_type`: Type of grading to perform ("modulation" or "symbol_contrast")

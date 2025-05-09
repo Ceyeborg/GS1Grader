@@ -1,3 +1,0 @@
-[submodule "external/pylibdmtx"]
- 	path = external/pylibdmtx
- 	url = https://github.com/Ceyeborg/pylibdmtx

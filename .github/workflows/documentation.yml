@@ -5,7 +5,6 @@ on:
     branches:
       - main
 
-
 permissions:
   contents: write
 
@@ -14,34 +13,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          submodules: true
 
       - uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
 
       - name: Install system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y \
-            libdmtx0b \
-            libdmtx-dev \
-            ffmpeg \
-            libsm6 \
-            libxext6 \
-            pandoc
+        run: sudo apt install -y pandoc
+
+      - name: Install Poetry
+        run: pip install poetry
 
       - name: Install documentation dependencies
-        run: |
-          pip install -r docs/requirements.txt
-
-      - name: Install project dependencies
-        run: |
-          pip install -r requirements.txt
+        run: poetry install --with documentation
 
       - name: Build Sphinx documentation
-        run: |
-          pip install -e .
-          cd docs && make html
+        run: cd docs && make html
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
