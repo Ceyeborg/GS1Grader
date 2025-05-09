@@ -17,7 +17,7 @@ Prerequisites
 System Dependencies
 ~~~~~~~~~~~~~~~~~~~
 
-Before installing GS1Grader, ensure you have the following system dependencies installed:
+Before installing GS1Grader, please ensure you have the following system dependencies installed:
 
 .. tabs::
 
@@ -52,11 +52,24 @@ GS1Grader requires Python 3.6 or later.
 
 Installation Methods
 --------------------
+There are two main ways to install GS1Grader: using pip from PyPI or from the source.
+1. **Using pip from PyPI**: This is the recommended method for most users.
+2. **From source**: This method is useful for developers or users who want to modify the library.
 
-Using the Installation Script from source (Recommended)
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The easiest way to install GS1Grader is using the provided installation script. This script automatically detects your operating system and installs all necessary dependencies:
+Using pip from PyPI
+~~~~~~~~~
+
+You can install GS1Grader using pip:
+
+.. code-block:: bash
+
+    pip install gs1grader
+
+
+From source
+~~~~~~~~~~~
+
 
 .. code-block:: bash
 
@@ -66,18 +79,7 @@ The easiest way to install GS1Grader is using the provided installation script. 
 
     poetry install
 
-
-Using pip
-~~~~~~~~~
-
-Alternatively, you can install GS1Grader sdist using pip:
-
-.. code-block:: bash
-
-    pip install gs1grader
-
-
-Verifying Installation
+Verifying the Installation
 ----------------------
 
 To verify your installation:
@@ -86,7 +88,7 @@ To verify your installation:
 
     from gs1grader.grader_api import DataMatrixGradeAPI
 
-    # Should create instance without errors
+    # Should create an DataMatrixGradeAPI instance without errors
     grader = DataMatrixGradeAPI()
 
 
