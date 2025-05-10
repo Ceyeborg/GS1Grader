@@ -14,8 +14,7 @@ dependencies = [
     "matplotlib>=3.8.2,<4.0",
     "numpy>=1.26,<2.0",
     "opencv-python>=4.8,<5.0",
-    "pylibdmtx @ git+https://github.com/Ceyeborg/pylibdmtx@gs1grader",
-    "pylint (>=3.3.7,<4.0.0)"
+    "pylibdmtx @ git+https://github.com/Ceyeborg/pylibdmtx@gs1grader"
 ]
 
 keywords    = ["GS1", "Data Matrix", "grading", "quality assurance"]
@@ -39,6 +38,7 @@ version = "0.1.2"  # base version
 pytest = "^8.3.5"
 pytest-cov = "^6.1.1"
 flake8 = "*"
+pylint = "^3.3.7"
 coverage = "*"
 black  = "^24.3.0"
 python-semantic-release = "^8.0.0"
