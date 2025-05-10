@@ -61,7 +61,9 @@ requires    = ["poetry-core>=2.0.0"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.semantic_release]
-version_variables = ["src/gs1grader/__init__.py:__version__"]
+version_variables = [
+    "src/gs1grader/__init__.py:__version__",
+    "docs/source/config.py:release"]
 version_toml = [
     "pyproject.toml:tool.poetry.version"
 ]
