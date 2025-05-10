@@ -39,7 +39,7 @@ class UECGrader(DataMatrixGraderInterface):
               unused capacity, while Grade F (0.0) indicates little to no
               unused capacity.
         """
-        print("Checkout our advanced version to avail this grade")
+        print("Checkout our advanced version to enable this grade")
         return None
 
     def explain_grade(self, data):
@@ -52,5 +52,5 @@ class UECGrader(DataMatrixGraderInterface):
         :return: Explanation of the grade
         :rtype: str
         """
-        print("Checkout our advanced version to avail this grade")
+        print("Checkout our advanced version to enable this grade")
         return None
