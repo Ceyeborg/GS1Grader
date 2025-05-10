@@ -31,7 +31,7 @@ class GridNonUniformityGrader(DataMatrixGraderInterface):
         :returns: The grade of the grid non-uniformity (A, B, C, D, or F)
         :rtype: str
         """
-        print("Checkout the advanced version to avail this grade")
+        print("Checkout the advanced version to enable this grade")
         return None
 
     def explain_grade(self, data):
@@ -43,5 +43,5 @@ class GridNonUniformityGrader(DataMatrixGraderInterface):
         :returns: Explanation of the grade
         :rtype: str
         """
-        print("Checkout the advanced version to avail this grade")
+        print("Checkout the advanced version to enable this grade")
         return None

@@ -24,7 +24,7 @@ class FixedPatternDamageGrader(DataMatrixGraderInterface):
         :returns: The grade of the fixed pattern damage (A, B, C, D, or F)
         :rtype: str
         """
-        print("Checkout the advanced version to avail this grade")
+        print("Checkout the advanced version to enable this grade")
         return None
 
     def explain_grade(self, data):
@@ -36,5 +36,5 @@ class FixedPatternDamageGrader(DataMatrixGraderInterface):
         :returns: Explanation of the grade
         :rtype: str
         """
-        print("Checkout the advanced version to avail this grade")
+        print("Checkout the advanced version to enable this grade")
         return None

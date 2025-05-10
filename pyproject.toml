@@ -14,7 +14,8 @@ dependencies = [
     "matplotlib>=3.8.2,<4.0",
     "numpy>=1.26,<2.0",
     "opencv-python>=4.8,<5.0",
-    "pylibdmtx @ git+https://github.com/Ceyeborg/pylibdmtx@gs1grader"
+    "pylibdmtx @ git+https://github.com/Ceyeborg/pylibdmtx@gs1grader",
+    "pylint (>=3.3.7,<4.0.0)"
 ]
 
 keywords    = ["GS1", "Data Matrix", "grading", "quality assurance"]
