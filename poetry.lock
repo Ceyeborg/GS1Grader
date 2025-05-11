@@ -408,9 +408,26 @@ description = "Composable command line interface toolkit"
 optional = false
 python-versions = ">=3.7"
 groups = ["dev"]
+markers = "python_version == \"3.9\""
 files = [
     {file = "click-8.1.8-py3-none-any.whl", hash = "sha256:63c132bbbed01578a06712a2d1f497bb62d9c1c0d329b7903a866228027263b2"},
     {file = "click-8.1.8.tar.gz", hash = "sha256:ed53c9d8990d83c2a27deae68e4ee337473f6330c040a31d4225c9574d16096a"},
+]
+
+[package.dependencies]
+colorama = {version = "*", markers = "platform_system == \"Windows\""}
+
+[[package]]
+name = "click"
+version = "8.2.0"
+description = "Composable command line interface toolkit"
+optional = false
+python-versions = ">=3.10"
+groups = ["dev"]
+markers = "python_version >= \"3.10\" and python_version < \"3.12\" or python_version == \"3.12\""
+files = [
+    {file = "click-8.2.0-py3-none-any.whl", hash = "sha256:6b303f0b2aa85f1cb4e5303078fadcbcd4e476f114fab9b5007005711839325c"},
+    {file = "click-8.2.0.tar.gz", hash = "sha256:f5452aeddd9988eefa20f90f05ab66f17fce1ee2a36907fd30b05bbb5953814d"},
 ]
 
 [package.dependencies]
@@ -2536,23 +2553,19 @@ files = [
 windows-terminal = ["colorama (>=0.4.6)"]
 
 [[package]]
-name = "pylibdmtx"
+name = "pylibdmtx-gs1grader"
 version = "0.1.11"
-description = "Read and write Data Matrix barcodes from Python 2 and 3."
+description = "Fork of NaturalHistoryMuseum pylibdmtx with GS1 extensions"
 optional = false
 python-versions = "*"
 groups = ["main"]
-files = []
-develop = false
+files = [
+    {file = "pylibdmtx-gs1grader-0.1.11.tar.gz", hash = "sha256:1859af124f7649e85d582c2dd8a5cd3d5c66dde110d799c0168b30403cada1dd"},
+    {file = "pylibdmtx_gs1grader-0.1.11-py2.py3-none-any.whl", hash = "sha256:c7b10c2ccd8f966cd7accefc86119cf0e5fbe337dbd3000f785ac3b058715ac1"},
+]
 
 [package.extras]
 scripts = ["Pillow (>=3.2.0)"]
-
-[package.source]
-type = "git"
-url = "https://github.com/Ceyeborg/pylibdmtx"
-reference = "gs1grader"
-resolved_reference = "968bb74c782f1a422ebef2ee7c1d304ad190156a"
 
 [[package]]
 name = "pylint"
@@ -3550,4 +3563,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.1"
 python-versions = ">=3.9,<3.13"
-content-hash = "d69de0aed6eca7e9830e3a79b4ae4cc639b605c5c3207a5e1d73415f783c65d7"
+content-hash = "aa12bac604ed1c6db47b8641cb62f6492dd20206c13e4d69f7ff03b630dcb6d1"
