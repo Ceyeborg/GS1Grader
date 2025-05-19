@@ -90,3 +90,24 @@ jobs:
       - name: Publish | Upload package to PyPI
         uses: pypa/gh-action-pypi-publish@v1.12.4
         if: steps.release.outputs.released == 'true'
+
+      - name: Trigger Docs Build
+        if: steps.release.outputs.released == 'true'
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const version = '${{ steps.release.outputs.tag }}';
+            const workflow = 'documentation.yml';
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+
+            const res = await github.actions.createWorkflowDispatch({
+              owner,
+              repo,
+              workflow_id: workflow,
+              ref: 'main',
+              inputs: {
+                release_tag: version
+              }
+            });
+            console.log(`Triggered docs build for version: ${version}`);

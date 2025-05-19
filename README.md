@@ -1,6 +1,6 @@
 # GS1Grader for UDI Vision Inspection
 
-![Banner](GitHub%20Header-UDI.jpg)
+![Banner](https://github.com/Ceyeborg/GS1Grader/blob/main/GitHub%20Header-UDI.jpg?raw=true)
 
 GS1Grader is a Python library for grading Data Matrix codes
 using GS1 quality metrics with modulation and symbol contrast implementation

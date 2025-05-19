@@ -4,6 +4,10 @@ on:
   push:
     branches:
       - main
+  workflow_run:
+    workflows: ["CI"]
+    types:
+      - completed
 
 permissions:
   contents: write
@@ -28,7 +32,13 @@ jobs:
         run: poetry install --with documentation
 
       - name: Build Sphinx documentation
-        run: eval $(poetry env activate) && cd docs && make html
+        env:
+          VERSION: ${{ github.event.inputs.release_tag || 'latest' }}
+        run: |
+          eval $(poetry env activate)
+          cd docs
+          make clean html
+          echo "release = '${{ env.VERSION }}'" >> source/conf.py
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4

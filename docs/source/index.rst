@@ -58,7 +58,7 @@ There are two main ways to install GS1Grader: using pip from PyPI or from the so
 
 
 Using pip from PyPI
-~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
 
 You can install GS1Grader using pip:
 
@@ -80,7 +80,7 @@ From source
     poetry install
 
 Verifying the Installation
-----------------------
+--------------------------
 
 To verify your installation:
 
