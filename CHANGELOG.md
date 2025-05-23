@@ -1,6 +1,25 @@
 # CHANGELOG
 
 
+## v0.1.5 (2025-05-23)
+
+### Bug Fixes
+
+- Trigger Doc workflow when a new release is published
+  ([`345a4c2`](https://github.com/Ceyeborg/GS1Grader/commit/345a4c2be584a8a1c342df719eb7b2ab84baafc0))
+
+* Updated the ci and doc workflow to trigger docs build after a release and add absolute url in
+  readme
+
+* Update .github/workflows/documentation.yml
+
+To include the version correctly
+
+Co-authored-by: Copilot <175728472+Copilot@users.noreply.github.com>
+
+---------
+
+
 ## v0.1.4 (2025-05-11)
 
 ### Bug Fixes

@@ -32,7 +32,7 @@ Repository  = "https://github.com/Ceyeborg/GS1Grader"
 Documentation = "https://ceyeborg.github.io/GS1Grader"
 
 [tool.poetry]
-version = "0.1.4"  # base version
+version = "0.1.5"  # base version
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.3.5"
