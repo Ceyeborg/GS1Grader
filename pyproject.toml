@@ -35,7 +35,7 @@ Documentation = "https://ceyeborg.github.io/GS1Grader"
 version = "1.0.0"  # base version
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.3.5"
+pytest = "^8.4.0"
 pytest-cov = "^6.1.1"
 flake8 = "*"
 pylint = "^3.3.7"
