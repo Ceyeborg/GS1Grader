@@ -106,7 +106,7 @@ jobs:
             const owner = context.repo.owner;
             const repo = context.repo.repo;
 
-            const res = await github.actions.createWorkflowDispatch({
+            await github.rest.actions.createWorkflowDispatch({
               owner,
               repo,
               workflow_id: workflow,
