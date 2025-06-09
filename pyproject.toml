@@ -32,16 +32,16 @@ Repository  = "https://github.com/Ceyeborg/GS1Grader"
 Documentation = "https://ceyeborg.github.io/GS1Grader"
 
 [tool.poetry]
-version = "0.1.4"  # base version
+version = "1.0.0"  # base version
 
 [tool.poetry.group.dev.dependencies]
-pytest = "^8.3.5"
+pytest = "^8.4.0"
 pytest-cov = "^6.1.1"
 flake8 = "*"
 pylint = "^3.3.7"
 coverage = "*"
 black  = "^25.1.0"
-python-semantic-release = "^9.21.1"
+python-semantic-release = "^10.0.2"
 
 [tool.poetry.group.documentation.dependencies]
 sphinx = ">=4.0.0"
