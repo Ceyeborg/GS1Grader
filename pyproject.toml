@@ -41,7 +41,7 @@ flake8 = "*"
 pylint = "^3.3.7"
 coverage = "*"
 black  = "^25.1.0"
-python-semantic-release = "^10.2.0"
+python-semantic-release = "^10.3.0"
 
 [tool.poetry.group.documentation.dependencies]
 sphinx = ">=4.0.0"
