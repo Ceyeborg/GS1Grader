@@ -7,7 +7,7 @@ authors = [
 ]
 readme      = "README.md"
 license     = "AGPL-3.0"
-license-files = ["LICENSE*", "COPYING*"]
+license-files = ["LICENSE*"]
 
 requires-python = ">=3.9,<3.13"
 dependencies = [
@@ -36,7 +36,7 @@ version = "1.0.1"  # base version
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.4.2"
-pytest-cov = "^6.3.0"
+pytest-cov = "^7.0.0"
 flake8 = "*"
 pylint = "^3.3.8"
 coverage = "*"
