@@ -7,7 +7,7 @@ authors = [
 ]
 readme      = "README.md"
 license     = "AGPL-3.0"
-license-files = ["LICENSE*", "COPYING*"]
+license-files = ["LICENSE*"]
 
 requires-python = ">=3.9,<3.13"
 dependencies = [
