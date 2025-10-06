@@ -38,10 +38,10 @@ version = "1.0.1"  # base version
 pytest = "^8.4.2"
 pytest-cov = "^7.0.0"
 flake8 = "*"
-pylint = "^3.3.8"
+pylint = "^3.3.9"
 coverage = "*"
-black  = "^25.1.0"
-python-semantic-release = "^10.4.0"
+black  = "^25.9.0"
+python-semantic-release = "^10.4.1"
 
 [tool.poetry.group.documentation.dependencies]
 sphinx = ">=4.0.0"
