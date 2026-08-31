@@ -40,7 +40,7 @@ pytest-cov = "^7.0.0"
 flake8 = "*"
 pylint = "^3.3.9"
 coverage = "*"
-black  = "^25.9.0"
+black  = "^25.11.0"
 python-semantic-release = "^10.5.3"
 
 [tool.poetry.group.documentation.dependencies]
